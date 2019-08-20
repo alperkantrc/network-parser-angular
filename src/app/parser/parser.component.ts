@@ -15,9 +15,12 @@ export class ParserComponent implements OnInit {
 
   parseInput(myInputValue) {
     if (myInputValue !== "") {
-      this.parserService.parse(myInputValue).subscribe(resArray => {
-        this.parseResult = JSON.stringify(resArray, undefined, 4);
-      });
+      this.parserService.parse(myInputValue).subscribe(
+        resArray => {
+          this.parseResult = JSON.stringify(resArray, undefined, 4);
+        },
+        error => alert(error.message)
+      );
     } else {
       this.parseResult = "";
       alert("input is required");
