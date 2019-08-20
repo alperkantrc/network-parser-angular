@@ -1,0 +1,19 @@
+<div>
+  <h3>Input</h3>
+  <p>
+    <textarea
+      #myInput
+      placeholder="paste input here"
+      rows="20"
+      cols="90"
+    ></textarea>
+  </p>
+  <p>
+    <button (click)="parseInput(myInput.value)">Parse Input</button>
+  </p>
+</div>
+
+<div *ngIf="parseResult">
+  <h3><p>Parsed Result</p></h3>
+  <textarea [(ngModel)]="parseResult" rows="20" cols="90"></textarea>
+</div>
